@@ -4,6 +4,13 @@ All notable changes to this project are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-10-16
+
+### Changed
+- New look: an analogue two-colour riso print (black and red ink on newsprint, the red plate a little out of register, halftone dots, paper grain). Replaces the night-sky collage, bats, moon and tape.
+- Menu bar icon: a tapered mug with two fangs bitten out of the rim. Solid with steam when awake, outline when sleep is allowed.
+- App icon, README art and the site redrawn in the same print. Helvetica Neue for all text; commands stay monospace.
+
 ## [1.0.0] - 2026-10-15
 
 ### Added

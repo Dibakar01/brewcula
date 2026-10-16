@@ -18,7 +18,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <img alt="A collage: a torn strip of night sky with a moon and paper bats, and a menu bar taped across it. A cursor clicks the mug icon in the menu bar. The mug fills and steams, the brewCula mascot opens its eyes, and the caption changes from 'Your Mac can sleep' to 'Your Mac stays awake, until you click again.' Sandboxed, no network, no sudo." src="assets/hero-light.svg" width="100%">
+  <img alt="A two-colour riso print. A cursor clicks the mug icon in a printed menu bar. The red ink plate prints, steam rises from the brewCula mug, and the caption changes from 'Your Mac can sleep' to 'Your Mac stays awake, until you click again.' Sandboxed, no network, no sudo." src="assets/hero-light.svg" width="100%">
 </picture>
 
 **[Website →](https://dibakar01.github.io/brewcula/)**
@@ -91,8 +91,8 @@ The zip the installer fetches is built by GitHub Actions from the tagged source,
 never on a laptop, and carries a signed build-provenance attestation.
 
 ```bash
-gh attestation verify brewCula-1.0.0.zip --repo Dibakar01/brewcula
-shasum -a 256 brewCula-1.0.0.zip    # equals SHA256SUMS on the release and SHA256 in install.sh
+gh attestation verify brewCula-1.1.0.zip --repo Dibakar01/brewcula
+shasum -a 256 brewCula-1.1.0.zip    # equals SHA256SUMS on the release and SHA256 in install.sh
 ```
 
 **It is not notarized.** That needs a paid Apple Developer account. `curl` does

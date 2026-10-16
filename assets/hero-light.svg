@@ -1,84 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="A collage: a torn strip of night sky with a moon and paper bats, and a menu bar taped across it. A cursor clicks the mug icon in the menu bar. The mug fills and steams, the brewCula mascot opens its eyes, and the caption changes from 'Your Mac can sleep' to 'Your Mac stays awake, until you click again.' Sandboxed, no network, no sudo.">
-  <defs>
-    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="2.5" cy="2.5" r="1.15" fill="#1a1211"/></pattern>
-    <pattern id="moondots" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><circle cx="3.5" cy="3.5" r="2" fill="#1a1211"/></pattern>
-    <pattern id="tape" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f3c9c3"/><rect width="3" height="6" fill="#f7dad6"/></pattern>
-    <clipPath id="mugbody"><rect x="24" y="44" width="60" height="72" rx="13"/></clipPath>
-    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 .1  0 0 0 0 .07  0 0 0 0 .07  0 0 0 -1.6 1.05"/></filter>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="A two-colour riso print. A cursor clicks the mug icon in a printed menu bar. The red ink plate prints, steam rises from the brewCula mug, and the caption changes from 'Your Mac can sleep' to 'Your Mac stays awake, until you click again.' Sandboxed, no network, no sudo.">
+<defs>
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="9"/><feDisplacementMap in="SourceGraphic" scale="9"/></filter>
+  <filter id="inky" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="3" seed="3" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="8" result="d"/><feTurbulence type="fractalNoise" baseFrequency="1.4" seed="5"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -16 14.6"/><feComposite in="d" operator="in"/></filter>
+  <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="7" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .32 -.08"/></filter>
+  <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(22)"><circle cx="8" cy="8" r="4.6" fill="#e0301c"/></pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1"><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <mask id="fademask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#fade)"/></mask>
+</defs>
   <style>
     .awake{opacity:1} .asleep{opacity:0} .cursor{opacity:0}
     @media (prefers-reduced-motion: no-preference) {
       .asleep{animation:asleep 8s infinite} .awake{animation:awake 8s infinite}
-      .cursor{animation:cursor 8s infinite ease-in-out} .ring{animation:ring 8s infinite ease-out;transform-origin:0 0}
-      .rise{animation:rise 1.6s infinite ease-out} .rise2{animation:rise 1.6s .8s infinite ease-out}
+      .cursor{animation:cursor 8s infinite ease-in-out} .ring{animation:ring 8s infinite ease-out;transform-box:fill-box;transform-origin:center}
+      .rise{animation:rise 1.8s infinite ease-out}
     }
     @keyframes asleep{0%,24%{opacity:1}26%,68%{opacity:0}70%,100%{opacity:1}}
     @keyframes awake{0%,24%{opacity:0}26%,68%{opacity:1}70%,100%{opacity:0}}
     @keyframes cursor{0%{opacity:0;transform:translate(-150px,60px)}6%{opacity:1}21%{transform:translate(0,0) scale(1)}24%{transform:translate(0,0) scale(.82)}27%,65%{transform:translate(0,0) scale(1)}68%{transform:translate(0,0) scale(.82)}71%{transform:translate(0,0) scale(1)}84%{opacity:1}90%,100%{opacity:0;transform:translate(80px,70px)}}
     @keyframes ring{0%,23%{opacity:0;transform:scale(.4)}24%{opacity:.7;transform:scale(.4)}32%,67%{opacity:0;transform:scale(1.5)}68%{opacity:.7;transform:scale(.4)}76%,100%{opacity:0;transform:scale(1.5)}}
-    @keyframes rise{0%{opacity:0;transform:translateY(5px)}40%{opacity:1}100%{opacity:0;transform:translateY(-7px)}}
+    @keyframes rise{0%{opacity:0;transform:translateY(24px)}40%{opacity:1}100%{opacity:0;transform:translateY(-30px)}}
   </style>
-  <rect width="1200" height="380" rx="18" fill="#fdf3f2"/>
-  <rect width="1200" height="380" rx="18" filter="url(#grain)" opacity=".22"/>
-  <rect x=".5" y=".5" width="1199" height="379" rx="17.5" fill="none" stroke="#ece4e2"/>
-  <g transform="rotate(-1.6 300 190)">
-    <path d="M60.0 51.4 L74.2 57.1 L87.3 52.1 L101.9 48.2 L115.5 53.6 L132.5 47.1 L143.7 47.1 L160.9 54.3 L168.9 57.8 L187.9 53.8 L202.8 47.9 L210.5 52.3 L218.7 48.3 L229.1 46.4 L242.2 51.3 L259.8 52.2 L275.0 52.0 L290.4 51.5 L301.3 58.0 L320.7 56.1 L336.7 49.8 L347.0 49.5 L355.3 55.2 L367.6 56.2 L379.8 57.5 L397.4 46.0 L407.4 56.9 L420.6 57.8 L432.9 46.9 L447.9 55.3 L458.6 47.0 L470.1 57.6 L486.7 47.4 L497.2 47.2 L505.4 55.6 L515.0 52.7 L527.9 48.3 L544.2 47.6 L559.4 47.4 L560.0 48.6 L559.1 52.0 L561.2 81.6 L561.5 101.1 L559.6 119.3 L560.6 147.1 L562.0 163.6 L559.0 181.8 L559.3 208.4 L558.3 227.8 L560.3 244.2 L560.4 262.8 L559.8 283.4 L560.0 299.8 L545.6 304.4 L535.9 295.8 L517.5 303.8 L507.0 296.3 L490.6 305.3 L480.8 305.4 L462.7 301.2 L450.1 295.2 L442.2 305.6 L431.8 302.5 L421.2 303.9 L406.6 297.5 L397.0 302.6 L388.6 296.7 L374.4 304.2 L359.6 297.4 L341.1 296.4 L333.4 297.2 L320.5 294.7 L310.9 298.4 L296.5 295.6 L284.7 304.7 L265.4 301.9 L249.6 301.0 L240.4 294.4 L232.7 304.9 L216.8 305.6 L209.1 301.6 L195.8 302.8 L184.4 306.0 L176.0 300.6 L159.7 304.8 L143.3 302.4 L126.3 305.0 L114.6 302.2 L96.3 304.5 L83.8 303.5 L65.9 300.9 L59.5 300.0 L60.4 276.3 L60.6 260.1 L61.5 230.2 L59.6 204.2 L60.3 178.2 L61.4 156.6 L61.0 140.3 L60.4 124.9 L58.9 102.7 L60.0 77.2 L61.7 53.0Z" fill="#1a1211" stroke="#1a1211" stroke-width="1.5"/>
-    <g><circle cx="478" cy="112" r="36" fill="#fdf3f2"/>
-    <clipPath id="moonclip478"><circle cx="478" cy="112" r="36"/></clipPath>
-    <circle cx="461.8" cy="104.8" r="36" fill="url(#moondots)" opacity=".28" clip-path="url(#moonclip478)"/></g>
-    <path transform="translate(120 104) scale(1.3)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(196 160) scale(0.9)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(372 92) scale(1.1)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(300 182) scale(0.8)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(470 196) scale(0.9)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/>
-    <g transform="translate(250 118) scale(1.15)"><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#fdf3f2" stroke="#fdf3f2" stroke-width="3" stroke-linejoin="round"/><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#d92819"/></g>
-    <g transform="translate(330 78) scale(0.7)"><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#fdf3f2" stroke="#fdf3f2" stroke-width="3" stroke-linejoin="round"/><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#d92819"/></g>
+  <rect width="1200" height="380" rx="18" fill="#ebe9e4"/><rect x="0" y="0" width="1200" height="380" rx="18" filter="url(#grain)" opacity="0.7"/><rect x=".5" y=".5" width="1199" height="379" rx="17.5" fill="none" stroke="#d6d3cc"/>
+  <g fill="none" stroke="#6b6862" stroke-width="1.4"><circle cx="40" cy="40" r="4.95"/><path d="M31 40h18M40 31v18"/></g><g fill="none" stroke="#6b6862" stroke-width="1.4"><circle cx="1160" cy="340" r="4.95"/><path d="M1151 340h18M1160 331v18"/></g>
+  <g transform="translate(92 92)"><rect width="14" height="14" fill="#151312"/><rect x="18" width="14" height="14" fill="#e0301c"/><rect x="36" width="14" height="14" fill="url(#dots)"/><rect x="54.7" y=".7" width="12.6" height="12.6" fill="none" stroke="#6b6862" stroke-width="1.4"/></g>
+  <text x="166" y="104" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#6b6862" letter-spacing="1.8">PROOF 02 · 2 INKS</text>
+  <rect x="98" y="203" width="480" height="42" fill="url(#dots)" style="mix-blend-mode:multiply" filter="url(#rough)"/>
+  <rect x="88" y="196" width="480" height="42" fill="#151312" filter="url(#inky)"/>
+  <text x="112" y="223" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="15" fill="#ebe9e4"><tspan font-weight="700">brewCula</tspan><tspan dx="22">File</tspan><tspan dx="20">Edit</tspan><tspan dx="20">View</tspan></text>
+  <g class="asleep"><g transform="translate(412.3 206.3) scale(1.3 -1.3) translate(0 -18)" stroke="#ebe9e4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.2 9C16.2 9.3 16 3.4 12 3.8" fill="none" stroke-width="1.5"/><path d="M2.4 11L12.4 11L11.9 3.4C11.85 2.2 11.1 1.4 9.9 1.4L4.9 1.4C3.7 1.4 2.95 2.2 2.9 3.4Z" fill="none" stroke-width="1.1"/><path d="M4.7 11.1L5.6 9.1L6.5 11.1ZM8.3 11.1L9.2 9.1L10.1 11.1Z" fill="#ebe9e4" stroke="none"/></g></g>
+  <g class="awake"><g transform="translate(412.3 206.3) scale(1.3 -1.3) translate(0 -18)" stroke="#ebe9e4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.2 9C16.2 9.3 16 3.4 12 3.8" fill="none" stroke-width="1.5"/><path d="M2.4 11L12.4 11L11.9 3.4C11.85 2.2 11.1 1.4 9.9 1.4L4.9 1.4C3.7 1.4 2.95 2.2 2.9 3.4Z" fill="#ebe9e4" stroke="none"/><path d="M4.7 11.1L5.6 9.1L6.5 11.1ZM8.3 11.1L9.2 9.1L10.1 11.1Z" fill="#151312" stroke="none"/><g class=""><path d="M7.4 12.3C5.9 13.2 8.9 14.1 7.4 15C5.9 15.9 8.9 16.8 7.4 17.6" fill="none" stroke-width="1.3"/></g></g></g>
+  <circle class="ring" cx="424" cy="218" r="22" fill="none" stroke="#e0301c" stroke-width="2.5" opacity="0"/>
+  <rect x="452" y="211" width="22" height="11" rx="3" fill="none" stroke="#ebe9e4" stroke-width="1.6"/><rect x="455" y="214" width="12" height="5" rx="1" fill="#ebe9e4"/>
+  <text x="486" y="222" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="14" fill="#ebe9e4">2:47 AM</text>
+  <g transform="translate(428 222)"><g class="cursor"><path d="M0 0v22l6-5.5 4 9 4-1.8-4-8.8h8z" fill="#151312" stroke="#ebe9e4" stroke-width="2" stroke-linejoin="round"/></g></g>
+  <text x="92" y="318" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#e0301c" letter-spacing="2.5">CLICK THE MUG</text>
+  <path d="M226 312c60-6 130-24 182-62" fill="none" stroke="#e0301c" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 6"/>
+  <path d="M396 250l13-1-3 12" fill="none" stroke="#e0301c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="asleep"><g transform="translate(610 42) scale(0.4348) translate(-290 -110)"><text x="600" y="300" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#151312">z<tspan dx="8" dy="-56" font-size="66">z</tspan></text>
+  <g filter="url(#inky)" style="mix-blend-mode:multiply"><path d="M318 372h336l-18 330c-2 40-30 68-70 68H406c-40 0-68-28-70-68z" fill="#151312"/><path d="M648 462c112-6 124 196 6 214" fill="none" stroke="#151312" stroke-width="58"/></g>
+  <path d="M404 370l24 58 24-58zM508 370l24 58 24-58z" fill="#ebe9e4" filter="url(#rough)"/></g></g>
+  <g class="awake"><g transform="translate(610 42) scale(0.4348) translate(-290 -110)"><g style="mix-blend-mode:multiply" filter="url(#rough)">
+    <g transform="translate(30 24)"><path d="M318 372h336l-18 330c-2 40-30 68-70 68H406c-40 0-68-28-70-68z" fill="url(#dots)"/><path d="M648 462c112-6 124 196 6 214" fill="none" stroke="url(#dots)" stroke-width="58"/></g>
+    <path d="M318 372h336l-18 330c-2 40-30 68-70 68H406c-40 0-68-28-70-68z" fill="#e0301c" mask="url(#fademask)" opacity=".9" transform="translate(12 10)"/>
+    <g class="rise"><path d="M488 324c-38-34-38-62-6-92s28-66-4-96" fill="none" stroke="#e0301c" stroke-width="24" stroke-linecap="round" transform="translate(6 4)"/></g>
   </g>
-  <g transform="rotate(.8 330 230)">
-    <rect x="86" y="208" width="480" height="44" rx="3" fill="#ffffff"/>
-    <text x="110" y="236" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" fill="#1a1211"><tspan font-weight="700">brewCula</tspan><tspan dx="22">File</tspan><tspan dx="20">Edit</tspan><tspan dx="20">View</tspan></text>
-    <g class="asleep"><g transform="translate(412.3 218.3) scale(1.3 -1.3) translate(0 -18)" fill="none" stroke="#1a1211" stroke-linecap="round"><path d="M12.4 8.6C16.4 8.8 16.4 3.4 12.4 3.6" stroke-width="1.5"/><rect x="3.35" y="2.15" width="8.3" height="7.9" rx="1.6" stroke-width="1"/><path d="M4.4 6.6C5 5.6 6.2 5.6 6.8 6.6M8.2 6.6C8.8 5.6 10 5.6 10.6 6.6" stroke-width="1.2"/></g></g>
-    <g class="awake"><g transform="translate(412.3 218.3) scale(1.3 -1.3) translate(0 -18)" fill="none" stroke="#1a1211" stroke-linecap="round"><path d="M12.4 8.6C16.4 8.8 16.4 3.4 12.4 3.6" stroke-width="1.5"/><rect x="2.6" y="1.4" width="9.8" height="9.4" rx="2.2" fill="#1a1211" stroke="none"/><ellipse cx="5.6" cy="6.65" rx="1" ry="1.25" fill="#ffffff" stroke="none"/><ellipse cx="9.4" cy="6.65" rx="1" ry="1.25" fill="#ffffff" stroke="none"/><g class="" stroke-width="1.2"><path d="M6.2 11.8C4.6 13.6 7.8 15.6 6.2 17.4"/><path d="M8.9 11.8C7.3 13.6 10.5 15.6 8.9 17.4"/></g></g></g>
-    <circle class="ring" cx="0" cy="0" r="22" fill="none" stroke="#d92819" stroke-width="2.5" transform="translate(424 230)" opacity="0"/>
-    <rect x="452" y="224" width="22" height="11" rx="3" fill="none" stroke="#1a1211" stroke-width="1.6"/><rect x="455" y="227" width="12" height="5" rx="1" fill="#1a1211"/>
-    <text x="486" y="236" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#1a1211">2:47 AM</text>
-    <path d="M-32.0 -11.0 L-29.1 -5.5 L-32.0 0.0 L-29.2 5.5 L-32.0 11.0 L32.0 11.0 L31.8 5.5 L32.0 0.0 L31.7 -5.5 L32.0 -11.0Z" fill="url(#tape)" opacity=".88" transform="translate(92 212) rotate(-24)"/><path d="M-32.0 -11.0 L-30.6 -5.5 L-32.0 0.0 L-30.9 5.5 L-32.0 11.0 L32.0 11.0 L31.6 5.5 L32.0 0.0 L29.4 -5.5 L32.0 -11.0Z" fill="url(#tape)" opacity=".88" transform="translate(560 246) rotate(-20)"/>
-  </g>
-  <g transform="translate(428 234)"><g class="cursor"><path d="M0 0v22l6-5.5 4 9 4-1.8-4-8.8h8z" fill="#1a1211" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/></g></g>
-  <text x="98" y="334" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" fill="#d92819" letter-spacing="2.5">CLICK THE MUG</text>
-  <path d="M262 326c40-6 100-20 152-72" fill="none" stroke="#d92819" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 6"/>
-  <path d="M404 254l10-2-1 10" fill="none" stroke="#d92819" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <g transform="translate(610 66) scale(1.85)">
-    <g class="asleep"><text x="62" y="30" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15" font-weight="700" fill="#7a6a68" opacity=".8">z<tspan dx="1" dy="-8" font-size="11">z</tspan></text>
-  <g stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="#ffffff"><path d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><rect x="24" y="44" width="60" height="72" rx="13"/><path d="M84 62c22 0 22 38 0 38" fill="none" stroke-width="20"/></g>
-  <path fill="#1a1211" d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><path fill="#a51b10" d="M27 84C18 70 11 55 8 41c11 3 20 8 28 13zM81 84c9-14 16-29 19-43-11 3-20 8-28 13z"/>
-  <path d="M84 62c22 0 22 38 0 38" fill="none" stroke="#d92819" stroke-width="9" stroke-linecap="round"/>
-  <g clip-path="url(#mugbody)"><rect x="24" y="44" width="60" height="72" rx="13" fill="#d92819"/>
-    <rect x="62" y="44" width="22" height="72" fill="url(#dots)" opacity=".16"/>
-    <path fill="#1a1211" d="M20 40h68v22H64l-10 11-10-11H20z"/>
-    <path d="M33 52q8-5 16-4" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".5"/></g>
-  <path d="M37 79q6 6 12 0M59 79q6 6 12 0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
-  <path d="M47 97q7 5 14 0" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
-  <path fill="#FFFFFF" d="M49.2 99.6h3.4l-1.7 4.2zM55.4 99.6h3.4l-1.7 4.2z"/></g>
-    <g class="awake"><g fill="none" stroke="#7a6a68" stroke-width="4" stroke-linecap="round" opacity=".6" class="rise">
-    <path d="M46 32c-6-6 6-10 0-18"/><path d="M62 32c-6-6 6-10 0-18"/></g>
-  <g stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="#ffffff"><path d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><rect x="24" y="44" width="60" height="72" rx="13"/><path d="M84 62c22 0 22 38 0 38" fill="none" stroke-width="20"/></g>
-  <path fill="#1a1211" d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><path fill="#a51b10" d="M27 84C18 70 11 55 8 41c11 3 20 8 28 13zM81 84c9-14 16-29 19-43-11 3-20 8-28 13z"/>
-  <path d="M84 62c22 0 22 38 0 38" fill="none" stroke="#d92819" stroke-width="9" stroke-linecap="round"/>
-  <g clip-path="url(#mugbody)"><rect x="24" y="44" width="60" height="72" rx="13" fill="#d92819"/>
-    <rect x="62" y="44" width="22" height="72" fill="url(#dots)" opacity=".16"/>
-    <path fill="#1a1211" d="M20 40h68v22H64l-10 11-10-11H20z"/>
-    <path d="M33 52q8-5 16-4" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".5"/></g>
-  <circle cx="43" cy="80" r="7" fill="#FFFFFF"/><circle cx="65" cy="80" r="7" fill="#FFFFFF"/>
-  <circle cx="44.5" cy="81" r="2.8" fill="#1a1211"/><circle cx="66.5" cy="81" r="2.8" fill="#1a1211"/>
-  <path d="M44 96q10 9 20 0" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
-  <path fill="#FFFFFF" d="M47.5 99.4h4l-2 5.4zM56.5 99.4h4l-2 5.4z"/></g>
-  </g>
-  <text x="862" y="150" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15" fill="#7a6a68" letter-spacing="2.5">YOUR MAC</text>
+  <g filter="url(#inky)" style="mix-blend-mode:multiply"><path d="M318 372h336l-18 330c-2 40-30 68-70 68H406c-40 0-68-28-70-68z" fill="#151312"/><path d="M648 462c112-6 124 196 6 214" fill="none" stroke="#151312" stroke-width="58"/></g>
+  <path d="M404 370l24 58 24-58zM508 370l24 58 24-58z" fill="#ebe9e4" filter="url(#rough)"/></g></g>
+  <text x="862" y="148" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#6b6862" letter-spacing="2.5">YOUR MAC</text>
   <g class="asleep">
-    <text x="860" y="212" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="54" font-weight="700" fill="#1a1211" letter-spacing="-1.6">can sleep</text>
-    <text x="862" y="250" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="18" fill="#7a6a68">Click the mug to keep it up.</text>
+    <text x="858" y="208" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="54" font-weight="700" fill="#151312" letter-spacing="-2">can sleep</text>
+    <text x="862" y="244" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" fill="#6b6862">Click the mug to keep it up.</text>
   </g>
   <g class="awake">
-    <text x="860" y="212" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="54" font-weight="700" fill="#d92819" letter-spacing="-1.6">stays awake</text>
-    <text x="862" y="250" font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="18" fill="#7a6a68">Until you click again.</text>
+    <text x="858" y="208" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="54" font-weight="700" fill="#e0301c" letter-spacing="-2">stays awake</text>
+    <text x="862" y="244" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="18" fill="#6b6862">Until you click again.</text>
   </g>
-  <text x="862" y="318" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#7a6a68" letter-spacing="1.5">SANDBOXED · NO NETWORK · NO SUDO</text>
+  <text x="862" y="318" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#6b6862" letter-spacing="2">SANDBOXED · NO NETWORK · NO SUDO</text>
 </svg>

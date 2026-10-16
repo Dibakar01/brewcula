@@ -1,26 +1,27 @@
 :root {
   color-scheme: light dark;
-  --bg: #fdf3f2;
-  --surface: #ffffff;
-  --ink: #1a1211;
-  --text: #1a1211;
-  --muted: #6e5f5d;
-  --line: #ece4e2;
-  --red: #d92819;
-  --red-text: #b81f12;
-  --night: #1a1211;
-  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* two-ink riso print: black and red on newsprint */
+  --bg: #ebe9e4;
+  --surface: #f5f4f1;
+  --ink: #151312;
+  --text: #151312;
+  --muted: #5c5954;
+  --line: #d6d3cc;
+  --red: #e0301c;
+  --red-text: #b51d0c;
+  --night: #151312;
+  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --radius: 14px;
+  --radius: 6px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #171010;
-    --surface: #221918;
-    --text: #fdf3f2;
-    --muted: #b9a9a6;
-    --line: #2c2220;
-    --red-text: #f0533f;
+    --bg: #141312;
+    --surface: #1d1c1a;
+    --text: #ebe9e4;
+    --muted: #a19e98;
+    --line: #2c2a27;
+    --red-text: #f05a45;
   }
 }
 
@@ -40,7 +41,7 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: .07;
+  opacity: .09;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 img { max-width: 100%; display: block; }
@@ -57,7 +58,8 @@ p { margin: 0 0 1em; max-width: 62ch; }
 :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 6px; }
 
 .nav { height: 64px; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; letter-spacing: -.02em; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; letter-spacing: -.02em; text-decoration: none; }
+.brand img { padding: 3px 4px; background: #ebe9e4; border-radius: 4px; }   /* the art is printed on light stock */
 
 .hero {
   display: grid;
@@ -67,8 +69,8 @@ p { margin: 0 0 1em; max-width: 62ch; }
   min-height: calc(100dvh - 64px);
   padding-block: 32px 72px;
 }
-.hero h1 { font-size: clamp(40px, 6.2vw, 76px); letter-spacing: -.045em; line-height: 1.05; }
-.rotator { display: inline-flex; margin-top: .08em; padding: 0 .18em .06em; border-radius: 12px; vertical-align: bottom; }
+.hero h1 { font-size: clamp(40px, 6.2vw, 76px); font-weight: 700; letter-spacing: -.045em; line-height: 1.05; }
+.rotator { display: inline-flex; margin-top: .08em; padding: 0 .18em .06em; border-radius: 4px; color: #fff; vertical-align: bottom; }
 .lede { font-size: 20px; color: var(--muted); }
 .lede code { color: var(--text); }
 
@@ -80,18 +82,18 @@ p { margin: 0 0 1em; max-width: 62ch; }
   padding: 6px 6px 6px 18px;
   margin: 28px 0 14px;
   background: var(--ink);
-  color: #fdf3f2;
-  border-radius: 999px;
-  border: 1px solid #3d2f2c;
-  box-shadow: 0 10px 30px -12px rgb(217 40 25 / .45);
+  color: #ebe9e4;
+  border-radius: var(--radius);
+  border: 1px solid #2c2a27;
+  box-shadow: 5px 5px 0 var(--red);          /* the red plate, printed a little off */
 }
 .install code { flex: 1; overflow-x: auto; white-space: nowrap; scrollbar-width: none; font-size: 14px; }
-.install code span { color: #f0533f; }
+.install code span { color: #f05a45; }
 .btn {
   min-width: 96px;
   padding: 10px 18px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 4px;
   background: var(--red);
   color: #fff;
   font: 700 15px var(--sans);
@@ -108,9 +110,6 @@ p { margin: 0 0 1em; max-width: 62ch; }
   padding: 56px 16px 40px;
   background: center / contain no-repeat;
 }
-@media (prefers-color-scheme: dark) {
-  .stage { filter: drop-shadow(0 18px 40px rgb(217 40 25 / .18)); }
-}
 .mug {
   width: 150px;
   height: 150px;
@@ -122,10 +121,9 @@ p { margin: 0 0 1em; max-width: 62ch; }
   cursor: pointer;
   transition: transform .25s cubic-bezier(.22, 1, .36, 1);
 }
-.mug img { width: 118px; height: auto; filter: drop-shadow(0 8px 10px rgb(0 0 0 / .35)); }
+.mug img { width: 104px; height: auto; }
 .mug:hover { transform: rotate(-4deg) scale(1.04); }
 .mug:active { transform: scale(.95); }
-.mug.is-awake img { filter: drop-shadow(0 0 22px rgb(240 83 63 / .55)); }
 .status {
   max-width: 34ch;
   min-height: 3.2em;
@@ -168,33 +166,22 @@ section + section { padding-block: 88px; border-top: 1px solid var(--line); }
   margin: 32px 0;
 }
 .tile { position: relative; padding: 24px; border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
-.tile b { font: 800 44px/1 var(--mono); letter-spacing: -.04em; }
+.tile b { font: 700 44px/1 var(--mono); letter-spacing: -.04em; }
 .tile span { font-family: var(--mono); font-size: 13px; margin: 10px 0 auto; opacity: .8; overflow-wrap: anywhere; }
-.tile p { margin: 16px 0 0; font-size: 18px; font-weight: 600; }
-.tile--ink { background: var(--night); color: #fdf3f2; }
+.tile p { margin: 16px 0 0; font-size: 18px; font-weight: 700; }
+.tile--ink { background: var(--night); color: #ebe9e4; }
 .tile--ink::after {
   content: '';
   position: absolute;
   inset: auto 0 0 45%;
   height: 70%;
-  background: radial-gradient(circle, #d92819 1.4px, transparent 1.6px) 0 0 / 7px 7px;
+  background: radial-gradient(circle, var(--red) 1.4px, transparent 1.6px) 0 0 / 7px 7px;
   opacity: .5;
   mask-image: linear-gradient(135deg, transparent 20%, #000);
 }
 .tile--red { background: var(--red); color: #fff; }
 .tile--paper { background: var(--surface); border: 1px solid var(--line); }
-.tile--paper::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  right: -14px;
-  width: 92px;
-  height: 26px;
-  rotate: 32deg;
-  background: repeating-linear-gradient(45deg, #f3c9c3 0 4px, #f7dad6 4px 8px);
-  opacity: .9;
-}
-.tile--blush { background: #f7dad6; color: #1a1211; }
+.tile--outline { border: 2px solid var(--text); }
 .tile:nth-child(2), .tile:nth-child(3) { transform: rotate(-.6deg); }
 
 .ways__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 24px; }

@@ -82,7 +82,7 @@ function CopyInstall({ reduce }: { reduce: boolean }) {
   return (
     <div className="install">
       <code ref={text}><span aria-hidden="true">$ </span>{INSTALL}</code>
-      <ClickSpark disabled={reduce} sparkColor="#d92819" sparkCount={10} sparkRadius={22} style={{ width: 'auto', height: 'auto' }}>
+      <ClickSpark disabled={reduce} sparkColor="#e0301c" sparkCount={10} sparkRadius={22} style={{ width: 'auto', height: 'auto' }}>
         <button type="button" className="btn" onClick={copy}>
           <span aria-live="polite">{label}</span>
         </button>
@@ -100,7 +100,7 @@ export default function App() {
     <>
       <header className="nav wrap">
         <a className="brand" href="./">
-          <img src={awakeSrc} alt="" width="30" height="31" />
+          <img src={awakeSrc} alt="" width="24" height="32" />
           brewCula
         </a>
         <a className="link" href={REPO}>GitHub</a>
@@ -115,7 +115,7 @@ export default function App() {
                 texts={['the download.', 'the render.', 'the build.', 'the call.']}
                 effect="slide"
                 highlight
-                highlightColor="#d92819"
+                highlightColor="#e0301c"
                 auto={!reduce}
                 rotationInterval={2400}
                 staggerDuration={0.02}
@@ -139,7 +139,7 @@ export default function App() {
               letterSpacing={2}
               spinDuration={awake ? 8 : 26}
               onHover="slowDown"
-              color="#fdf3f2"
+              color="#151312"
             >
               <button
                 type="button"
@@ -148,7 +148,7 @@ export default function App() {
                 aria-label="Keep this screen awake"
                 onClick={toggle}
               >
-                <img src={awake ? awakeSrc : asleepSrc} alt="" width="128" height="132" />
+                <img src={awake ? awakeSrc : asleepSrc} alt="" width="104" height="138" />
               </button>
             </CircularText>
             <p className="status" aria-live="polite">{STATUS[wake]}</p>
@@ -192,7 +192,7 @@ export default function App() {
             <article className="tile tile--paper">
               <b>-m</b><span>PreventDiskIdle</span><p>Disks keep spinning.</p>
             </article>
-            <article className="tile tile--blush">
+            <article className="tile tile--outline">
               <b>-s</b><span>PreventSystemSleep</span><p>No system sleep on AC power. That part is a macOS rule.</p>
             </article>
           </div>
@@ -209,7 +209,7 @@ export default function App() {
                 From <a className="link" href={`${REPO}/releases/latest`}>the latest release</a>. It isn't notarized, so
                 macOS blocks it once: System Settings › Privacy &amp; Security › Open Anyway.
               </p>
-              <Code>gh attestation verify brewCula-1.0.0.zip --repo Dibakar01/brewcula</Code>
+              <Code>gh attestation verify brewCula-1.1.0.zip --repo Dibakar01/brewcula</Code>
             </div>
             <div>
               <h3>Build it yourself</h3>

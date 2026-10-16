@@ -148,48 +148,55 @@ final class BrewCula: NSObject, NSApplicationDelegate {
     }
 }
 
-// The menu bar icon: brewCula's mug, kept plain so it reads at 18 points. Template image, so macOS tints it for light,
-// dark and tinted menu bars. Awake: filled, eyes open, steam. Asleep: outline, eyes closed.
+// The menu bar icon: brewCula's mug with two fangs bitten out of the rim, kept plain so it reads at
+// 18 points. Template image, so macOS tints it for light, dark and tinted menu bars.
+// Awake: solid mug, fangs cut out, steam. Asleep: outline mug, fangs drawn in.
 func mugIcon(awake: Bool, steam: CGFloat) -> NSImage {
     let img = NSImage(size: NSSize(width: 18, height: 18), flipped: false) { _ in
         NSColor.black.set()
-        let body = NSBezierPath(roundedRect: NSRect(x: 2.6, y: 1.4, width: 9.8, height: 9.4), xRadius: 2.2, yRadius: 2.2)
+        let body = NSBezierPath()                                        // tapered cup, round foot
+        body.move(to: NSPoint(x: 2.4, y: 11))
+        body.line(to: NSPoint(x: 12.4, y: 11))
+        body.line(to: NSPoint(x: 11.9, y: 3.4))
+        body.curve(to: NSPoint(x: 9.9, y: 1.4), controlPoint1: NSPoint(x: 11.85, y: 2.2), controlPoint2: NSPoint(x: 11.1, y: 1.4))
+        body.line(to: NSPoint(x: 4.9, y: 1.4))
+        body.curve(to: NSPoint(x: 2.9, y: 3.4), controlPoint1: NSPoint(x: 3.7, y: 1.4), controlPoint2: NSPoint(x: 2.95, y: 2.2))
+        body.close()
+        let fangs = NSBezierPath()
+        for x in [4.7, 8.3] {
+            fangs.move(to: NSPoint(x: x, y: 11.1))
+            fangs.line(to: NSPoint(x: x + 0.9, y: 9.1))
+            fangs.line(to: NSPoint(x: x + 1.8, y: 11.1))
+            fangs.close()
+        }
         let handle = NSBezierPath()
-        handle.move(to: NSPoint(x: 12.4, y: 8.6))
-        handle.curve(to: NSPoint(x: 12.4, y: 3.6), controlPoint1: NSPoint(x: 16.4, y: 8.8), controlPoint2: NSPoint(x: 16.4, y: 3.4))
+        handle.move(to: NSPoint(x: 12.2, y: 9.0))
+        handle.curve(to: NSPoint(x: 12.0, y: 3.8), controlPoint1: NSPoint(x: 16.2, y: 9.3), controlPoint2: NSPoint(x: 16.0, y: 3.4))
         handle.lineWidth = 1.5
         handle.lineCapStyle = .round
         handle.stroke()
-        let ctx = NSGraphicsContext.current
         if awake {
             body.fill()
-            ctx?.compositingOperation = .clear                         // punch the eyes out
-            NSBezierPath(ovalIn: NSRect(x: 4.6, y: 5.4, width: 2.0, height: 2.5)).fill()
-            NSBezierPath(ovalIn: NSRect(x: 8.4, y: 5.4, width: 2.0, height: 2.5)).fill()
-            ctx?.compositingOperation = .sourceOver
+            NSGraphicsContext.current?.compositingOperation = .clear      // bite the fangs out
+            fangs.fill()
+            NSGraphicsContext.current?.compositingOperation = .sourceOver
         } else {
-            NSBezierPath(roundedRect: NSRect(x: 3.35, y: 2.15, width: 8.3, height: 7.9), xRadius: 1.6, yRadius: 1.6).stroke()
-            for x in [4.4, 8.2] {                                        // sleepy eyes
-                let eye = NSBezierPath()
-                eye.move(to: NSPoint(x: x, y: 6.6))
-                eye.curve(to: NSPoint(x: x + 2.4, y: 6.6), controlPoint1: NSPoint(x: x + 0.6, y: 5.6), controlPoint2: NSPoint(x: x + 1.8, y: 5.6))
-                eye.lineWidth = 1.2
-                eye.lineCapStyle = .round
-                eye.stroke()
-            }
+            body.lineWidth = 1.1
+            body.lineJoinStyle = .round
+            body.stroke()
+            fangs.fill()
         }
         guard steam > 0.01 else { return true }
         NSGraphicsContext.saveGraphicsState()
-        NSRect(x: 0, y: 0, width: 18, height: 11.6 + 6.4 * steam).clip()  // rises as it appears
+        NSRect(x: 0, y: 0, width: 18, height: 11.8 + 6.2 * steam).clip()  // rises as it appears
         NSColor.black.withAlphaComponent(steam).set()
-        for x in [6.2, 8.9] {
-            let w = NSBezierPath()
-            w.move(to: NSPoint(x: x, y: 11.8))
-            w.curve(to: NSPoint(x: x, y: 17.4), controlPoint1: NSPoint(x: x - 1.6, y: 13.6), controlPoint2: NSPoint(x: x + 1.6, y: 15.6))
-            w.lineWidth = 1.2
-            w.lineCapStyle = .round
-            w.stroke()
-        }
+        let w = NSBezierPath()
+        w.move(to: NSPoint(x: 7.4, y: 12.3))
+        w.curve(to: NSPoint(x: 7.4, y: 15.0), controlPoint1: NSPoint(x: 5.9, y: 13.2), controlPoint2: NSPoint(x: 8.9, y: 14.1))
+        w.curve(to: NSPoint(x: 7.4, y: 17.6), controlPoint1: NSPoint(x: 5.9, y: 15.9), controlPoint2: NSPoint(x: 8.9, y: 16.8))
+        w.lineWidth = 1.3
+        w.lineCapStyle = .round
+        w.stroke()
         NSGraphicsContext.restoreGraphicsState()
         return true
     }

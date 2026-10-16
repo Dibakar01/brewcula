@@ -1,23 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 0 128 132" width="128" height="132" role="img" aria-label="brewCula, a red mug with a widow's peak, fangs and a Dracula collar">
-  <defs>
-    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="2.5" cy="2.5" r="1.15" fill="#1a1211"/></pattern>
-    <pattern id="moondots" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><circle cx="3.5" cy="3.5" r="2" fill="#1a1211"/></pattern>
-    <pattern id="tape" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f3c9c3"/><rect width="3" height="6" fill="#f7dad6"/></pattern>
-    <clipPath id="mugbody"><rect x="24" y="44" width="60" height="72" rx="13"/></clipPath>
-    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 .1  0 0 0 0 .07  0 0 0 0 .07  0 0 0 -1.6 1.05"/></filter>
-  </defs>
-  <g fill="none" stroke="#b9a9a6" stroke-width="4" stroke-linecap="round" opacity=".6" class="">
-    <path d="M46 32c-6-6 6-10 0-18"/><path d="M62 32c-6-6 6-10 0-18"/></g>
-  <g stroke="#fdf3f2" stroke-width="7" stroke-linejoin="round" fill="#fdf3f2"><path d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><rect x="24" y="44" width="60" height="72" rx="13"/><path d="M84 62c22 0 22 38 0 38" fill="none" stroke-width="20"/></g>
-  <path fill="#1a1211" d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><path fill="#a51b10" d="M27 84C18 70 11 55 8 41c11 3 20 8 28 13zM81 84c9-14 16-29 19-43-11 3-20 8-28 13z"/>
-  <path d="M84 62c22 0 22 38 0 38" fill="none" stroke="#d92819" stroke-width="9" stroke-linecap="round"/>
-  <g clip-path="url(#mugbody)"><rect x="24" y="44" width="60" height="72" rx="13" fill="#d92819"/>
-    <rect x="62" y="44" width="22" height="72" fill="url(#dots)" opacity=".16"/>
-    <path fill="#1a1211" d="M20 40h68v22H64l-10 11-10-11H20z"/>
-    <path d="M33 52q8-5 16-4" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".5"/></g>
-  <circle cx="43" cy="80" r="7" fill="#FFFFFF"/><circle cx="65" cy="80" r="7" fill="#FFFFFF"/>
-  <circle cx="44.5" cy="81" r="2.8" fill="#1a1211"/><circle cx="66.5" cy="81" r="2.8" fill="#1a1211"/>
-  <path d="M44 96q10 9 20 0" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
-  <path fill="#FFFFFF" d="M47.5 99.4h4l-2 5.4zM56.5 99.4h4l-2 5.4z"/>
-  <ellipse cx="54" cy="125" rx="26" ry="4.5" fill="#d92819" opacity=".2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="290 110 520 690" width="104" height="138" role="img" aria-label="brewCula: a steaming mug with two fangs, printed in black and red ink">
+<defs>
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="9"/><feDisplacementMap in="SourceGraphic" scale="9"/></filter>
+  <filter id="inky" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="3" seed="3" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="8" result="d"/><feTurbulence type="fractalNoise" baseFrequency="1.4" seed="5"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -16 14.6"/><feComposite in="d" operator="in"/></filter>
+  <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" seed="7" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .32 -.08"/></filter>
+  <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(22)"><circle cx="8" cy="8" r="4.6" fill="#ea4630"/></pattern>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1"><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <mask id="fademask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#fade)"/></mask>
+</defs>
+  <g style="mix-blend-mode:screen" filter="url(#rough)">
+    <g transform="translate(30 24)"><path d="M318 372h336l-18 330c-2 40-30 68-70 68H406c-40 0-68-28-70-68z" fill="url(#dots)"/><path d="M648 462c112-6 124 196 6 214" fill="none" stroke="url(#dots)" stroke-width="58"/></g>
+    <path d="M318 372h336l-18 330c-2 40-30 68-70 68H406c-40 0-68-28-70-68z" fill="#ea4630" mask="url(#fademask)" opacity=".9" transform="translate(12 10)"/>
+    <g class=""><path d="M488 324c-38-34-38-62-6-92s28-66-4-96" fill="none" stroke="#ea4630" stroke-width="24" stroke-linecap="round" transform="translate(6 4)"/></g>
+  </g>
+  <g filter="url(#inky)" style="mix-blend-mode:normal"><path d="M318 372h336l-18 330c-2 40-30 68-70 68H406c-40 0-68-28-70-68z" fill="#ebe9e4"/><path d="M648 462c112-6 124 196 6 214" fill="none" stroke="#ebe9e4" stroke-width="58"/></g>
+  <path d="M404 370l24 58 24-58zM508 370l24 58 24-58z" fill="#141312" filter="url(#rough)"/>
 </svg>

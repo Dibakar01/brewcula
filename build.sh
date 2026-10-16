@@ -3,7 +3,7 @@
 # Needs only the Xcode Command Line Tools (`xcode-select --install`). No dependencies.
 set -eu
 cd "$(dirname "$0")"
-VERSION="${VERSION:-1.0.0}"
+VERSION="${VERSION:-1.1.0}"
 case "$VERSION" in *[!0-9.]*|"") echo "bad VERSION: $VERSION"; exit 1;; esac
 APP=build/brewCula.app
 rm -rf build
