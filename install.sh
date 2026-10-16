@@ -19,8 +19,8 @@ set -eu
 
 # Everything runs inside main, so a download cut off mid-file runs nothing.
 main() {
-  VERSION="1.0.0"
-  SHA256="888d34c0fc97d1d27e6186d63f11a8b30ade5f90a4ed085bb9981298a9737408"
+  VERSION="1.1.0"
+  SHA256="778e1da0f9e714531974c34c84124f32d2f5546148c99463d84884d43776215b"
   URL="https://github.com/Dibakar01/brewcula/releases/download/v$VERSION/brewCula-$VERSION.zip"
   DEST="${BREWCULA_DEST:-$HOME/Applications}"
   APP="$DEST/brewCula.app"
