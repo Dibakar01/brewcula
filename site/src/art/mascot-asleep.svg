@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 0 128 132" width="128" height="132">
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="2.5" cy="2.5" r="1.15" fill="#1a1211"/></pattern>
+    <pattern id="moondots" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><circle cx="3.5" cy="3.5" r="2" fill="#1a1211"/></pattern>
+    <pattern id="tape" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f3c9c3"/><rect width="3" height="6" fill="#f7dad6"/></pattern>
+    <clipPath id="mugbody"><rect x="24" y="44" width="60" height="72" rx="13"/></clipPath>
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 .1  0 0 0 0 .07  0 0 0 0 .07  0 0 0 -1.6 1.05"/></filter>
+  </defs>
+  <text x="62" y="30" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15" font-weight="700" fill="#b9a9a6" opacity=".8">z<tspan dx="1" dy="-8" font-size="11">z</tspan></text>
+  <g stroke="#fdf3f2" stroke-width="7" stroke-linejoin="round" fill="#fdf3f2"><path d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><rect x="24" y="44" width="60" height="72" rx="13"/><path d="M84 62c22 0 22 38 0 38" fill="none" stroke-width="20"/></g>
+  <path fill="#1a1211" d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><path fill="#a51b10" d="M27 84C18 70 11 55 8 41c11 3 20 8 28 13zM81 84c9-14 16-29 19-43-11 3-20 8-28 13z"/>
+  <path d="M84 62c22 0 22 38 0 38" fill="none" stroke="#d92819" stroke-width="9" stroke-linecap="round"/>
+  <g clip-path="url(#mugbody)"><rect x="24" y="44" width="60" height="72" rx="13" fill="#d92819"/>
+    <rect x="62" y="44" width="22" height="72" fill="url(#dots)" opacity=".16"/>
+    <path fill="#1a1211" d="M20 40h68v22H64l-10 11-10-11H20z"/>
+    <path d="M33 52q8-5 16-4" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".5"/></g>
+  <path d="M37 79q6 6 12 0M59 79q6 6 12 0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M47 97q7 5 14 0" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+  <path fill="#FFFFFF" d="M49.2 99.6h3.4l-1.7 4.2zM55.4 99.6h3.4l-1.7 4.2z"/>
+</svg>

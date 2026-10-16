@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="2.5" cy="2.5" r="1.15" fill="#1a1211"/></pattern>
+    <pattern id="moondots" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><circle cx="3.5" cy="3.5" r="2" fill="#1a1211"/></pattern>
+    <pattern id="tape" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#f3c9c3"/><rect width="3" height="6" fill="#f7dad6"/></pattern>
+    <clipPath id="mugbody"><rect x="24" y="44" width="60" height="72" rx="13"/></clipPath>
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 .1  0 0 0 0 .07  0 0 0 0 .07  0 0 0 -1.6 1.05"/></filter>
+  </defs>
+  <clipPath id="sq"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1a1211" flood-opacity=".3"/></filter>
+  <g filter="url(#shadow)"><rect x="100" y="100" width="824" height="824" rx="185" fill="#fdf3f2"/></g>
+  <g clip-path="url(#sq)">
+    <path d="M60.0 52.7 L91.8 56.4 L125.2 63.5 L144.0 46.4 L183.8 53.3 L207.2 73.9 L237.0 69.4 L266.9 63.9 L288.0 63.8 L328.6 60.6 L365.8 64.8 L384.5 67.2 L417.6 54.4 L435.4 70.2 L465.3 66.1 L506.2 66.0 L548.3 57.1 L587.0 58.4 L629.5 70.6 L649.1 49.8 L672.0 73.0 L700.9 63.5 L726.1 60.2 L753.6 55.8 L786.5 62.4 L828.1 65.1 L870.4 70.0 L914.3 64.8 L935.8 70.1 L964.0 71.3 L964.0 60.0 L964.0 113.3 L964.0 171.6 L964.0 212.8 L964.0 275.1 L964.0 328.6 L964.0 372.3 L964.0 408.4 L964.0 471.5 L964.0 539.1 L964.0 576.1 L964.0 587.5 L942.9 584.2 L905.0 600.4 L886.8 593.2 L868.6 596.1 L842.6 600.7 L798.9 590.2 L754.7 584.7 L735.6 592.8 L717.8 581.5 L689.7 593.1 L668.4 577.2 L627.8 584.8 L584.8 601.1 L557.5 588.9 L526.3 594.0 L493.1 591.7 L459.3 602.3 L428.5 588.1 L391.9 582.7 L366.7 603.4 L335.5 591.4 L318.2 587.6 L285.4 576.6 L251.7 593.7 L233.0 593.6 L203.4 595.0 L176.8 595.8 L139.7 576.6 L121.1 594.9 L77.9 583.0 L60.0 590.0 L60.0 535.8 L60.0 491.0 L60.0 444.6 L60.0 400.0 L60.0 353.4 L60.0 299.2 L60.0 254.9 L60.0 208.1 L60.0 147.9 L60.0 113.0Z" fill="#1a1211"/>
+    <g><circle cx="760" cy="250" r="78" fill="#fdf3f2"/>
+    <clipPath id="moonclip760"><circle cx="760" cy="250" r="78"/></clipPath>
+    <circle cx="724.9" cy="234.4" r="78" fill="url(#moondots)" opacity=".28" clip-path="url(#moonclip760)"/></g>
+    <path transform="translate(232 196) scale(2.2)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(436 168) scale(1.5)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(604 236) scale(1.8)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(858 420) scale(1.4)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/><path transform="translate(178 420) scale(1.3)" fill="#fdf3f2" opacity="0.85" d="M0-6Q.8-.8 6 0 .8.8 0 6-.8.8-6 0-.8-.8 0-6z"/>
+    <g transform="translate(300 300) scale(3.2)"><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#fdf3f2" stroke="#fdf3f2" stroke-width="3" stroke-linejoin="round"/><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#d92819"/></g>
+    <g transform="translate(612 386) scale(1.9)"><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#fdf3f2" stroke="#fdf3f2" stroke-width="3" stroke-linejoin="round"/><path d="M0 0C-6-8-16-10-22-6c4 2 5 6 4 9 4-3 8-2 10 1 2-3 5-3 8-1 3-2 6-2 8 1 2-3 6-4 10-1-1-3 0-7 4-9C16-10 6-8 0 0zM-2.5-2-2-6.5 0-3.6 2-6.5 2.5-2z" fill="#d92819"/></g>
+    <path d="M-115.0 -27.0 L-113.1 -13.5 L-115.0 0.0 L-112.8 13.5 L-115.0 27.0 L115.0 27.0 L112.6 13.5 L115.0 0.0 L112.2 -13.5 L115.0 -27.0Z" fill="url(#tape)" opacity=".88" transform="translate(196 170) rotate(-38)"/>
+    <g transform="translate(216 300) scale(4.95)"><g fill="none" stroke="#e9d6d3" stroke-width="4" stroke-linecap="round" opacity=".6" class="">
+    <path d="M46 32c-6-6 6-10 0-18"/><path d="M62 32c-6-6 6-10 0-18"/></g>
+  <g stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="#ffffff"><path d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><rect x="24" y="44" width="60" height="72" rx="13"/><path d="M84 62c22 0 22 38 0 38" fill="none" stroke-width="20"/></g>
+  <path fill="#1a1211" d="M28 104C14 84 4 58 0 32c16 4 30 10 42 18L28 104zM80 104c14-20 24-46 28-72-16 4-30 10-42 18l14 54z"/><path fill="#a51b10" d="M27 84C18 70 11 55 8 41c11 3 20 8 28 13zM81 84c9-14 16-29 19-43-11 3-20 8-28 13z"/>
+  <path d="M84 62c22 0 22 38 0 38" fill="none" stroke="#d92819" stroke-width="9" stroke-linecap="round"/>
+  <g clip-path="url(#mugbody)"><rect x="24" y="44" width="60" height="72" rx="13" fill="#d92819"/>
+    <rect x="62" y="44" width="22" height="72" fill="url(#dots)" opacity=".16"/>
+    <path fill="#1a1211" d="M20 40h68v22H64l-10 11-10-11H20z"/>
+    <path d="M33 52q8-5 16-4" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".5"/></g>
+  <circle cx="43" cy="80" r="7" fill="#FFFFFF"/><circle cx="65" cy="80" r="7" fill="#FFFFFF"/>
+  <circle cx="44.5" cy="81" r="2.8" fill="#1a1211"/><circle cx="66.5" cy="81" r="2.8" fill="#1a1211"/>
+  <path d="M44 96q10 9 20 0" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+  <path fill="#FFFFFF" d="M47.5 99.4h4l-2 5.4zM56.5 99.4h4l-2 5.4z"/></g>
+    <ellipse cx="483" cy="914" rx="150" ry="20" fill="#d92819" opacity=".18"/>
+  </g>
+</svg>

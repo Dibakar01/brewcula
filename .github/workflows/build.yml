@@ -1,0 +1,56 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: sh -n install.sh
+      - run: ./build.sh
+      - name: Self-test (sandboxed, 4 assertions taken and released)
+        run: build/brewCula.app/Contents/MacOS/brewCula --check
+
+  # Tags only. The zip users install is built here from the tagged source, never on a laptop,
+  # and carries a signed build-provenance attestation: gh attestation verify <zip> --repo Dibakar01/brewcula
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: macos-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build
+        run: VERSION="${GITHUB_REF_NAME#v}" ./build.sh
+      - run: build/brewCula.app/Contents/MacOS/brewCula --check
+      - name: Package
+        run: |
+          zip="brewCula-${GITHUB_REF_NAME#v}.zip"
+          ditto -c -k --keepParent build/brewCula.app "$zip"
+          shasum -a 256 "$zip" > SHA256SUMS
+          cat SHA256SUMS
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: brewCula-*.zip
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" brewCula-*.zip SHA256SUMS \
+            --repo "$GITHUB_REPOSITORY" --title "brewCula $GITHUB_REF_NAME" \
+            --notes "Install: curl -fsSL https://raw.githubusercontent.com/Dibakar01/brewcula/main/install.sh | sh"
