@@ -56,6 +56,7 @@ main() {
 
   mkdir -p "$DEST"
   pkill -x brewCula 2>/dev/null || true
+  for _ in 1 2 3 4 5 6 7 8 9 10; do pgrep -x brewCula >/dev/null || break; sleep 0.3; done  # else open fails with -600
   rm -rf "$APP"
   mv "$tmp/out/brewCula.app" "$APP"
   echo "Installed $APP"
